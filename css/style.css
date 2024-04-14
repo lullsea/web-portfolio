@@ -1,0 +1,20 @@
+* {
+	font-family: 'Inconsolata', monospace;
+}
+
+body {
+	margin: 0;
+	overflow: hidden;
+}
+
+#main-content {
+	transition: 0.5s;
+	color: white;
+	margin-top: 60px;
+}
+
+canvas {
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+}
