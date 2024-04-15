@@ -8,7 +8,7 @@ globe = new Globe(window.innerWidth, window.innerHeight, {
     data: [],
     tiles: grid.tiles,
     baseColor: "#000",
-    markerColor: "#8e44ad",
+    markerColor: "#0e44ad",
     pinColor: "#aacfd1",
 
     satelliteColor: "#aacfd1",
@@ -36,24 +36,23 @@ let initGlobe = () => {
     animate();
     globe.addMarker(3.1319, 101.6841, "Kuala Lumpur", true);
     var constellation = [];
-    var opts = {
-            coreColor: "#ff0000",
-            numWaves: 8,
-            size: 0.6,
-        };
     var alt = 1;
 
     for (var i = 0; i < 2; i++) {
-            for (var j = 0; j < 3; j++) {
-                        constellation.push({
-                                        lat: 50 * i - 30 + 15 * Math.random(),
-                                        lon: 120 * j - 120 + 30 * i,
-                                        altitude: alt
-                                    });
-                    }
+        for (var j = 0; j < 3; j++) {
+            constellation.push({
+                lat: 50 * i - 30 + 15 * Math.random(),
+                lon: 120 * j - 120 + 30 * i,
+                altitude: alt
+            });
         }
+    }
 
-    globe.addConstellation(constellation, opts);
+    globe.addConstellation(constellation, {
+            coreColor: "#ff0000",
+            numWaves: 8,
+            size: 0.6,
+        });
 }
 window.addEventListener('resize', () => {
     let h = window.innerHeight;
