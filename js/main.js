@@ -3,7 +3,13 @@ var $ = require("jquery"),
 // #################### GLOBE ####################
 
 var main = $("#main-content")
-globe = new Globe(window.innerWidth, window.innerHeight, {
+
+let globeScale = .5;
+
+let globeWidth = window.innerWidth * globeScale;
+let globeHeight = window.innerHeight * globeScale;
+
+globe = new Globe(globeWidth, globeHeight, {
     font: "monospace",
     data: [],
     tiles: grid.tiles,
@@ -17,13 +23,13 @@ globe = new Globe(window.innerWidth, window.innerHeight, {
     introLinesDuration: 2000,
     maxPins: 500,
     maxMarkers: 4,
-    viewAngle: 0.1
+    viewAngle: -0.2
 });
 
 let c = globe.domElement;
-c.style = "filter: invert(1)";
+c.style = "filter: invert(1) contrast(0.96)";
 
-$('#details').append(c);
+$('#globe').append(c);
 
 function animate() {
     if (globe) {
@@ -49,16 +55,17 @@ let initGlobe = () => {
     }
 
     globe.addConstellation(constellation, {
-            coreColor: "#ff0000",
+            coreColor: "#bac",
             numWaves: 8,
             size: 0.6,
         });
 }
 window.addEventListener('resize', () => {
-    let h = window.innerHeight;
-    globe.camera.aspect = window.innerWidth / h;
+    // Only resize the globe on height change
+    globeHeight = window.innerHeight * globeScale;
+    globe.camera.aspect = globeWidth / globeHeight;
     globe.camera.updateProjectionMatrix();
-    globe.renderer.setSize(window.innerWidth, h);
+    globe.renderer.setSize(globeWidth, globeHeight);
 })
 
 initGlobe()
