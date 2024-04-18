@@ -1,3 +1,4 @@
+/* #################### MAIN #################### */
 * {
 	font-family: 'Inconsolata', monospace;
 	padding: 0;
@@ -25,20 +26,33 @@ canvas {
 	z-index: -100;
 }
 
+/* #################### PROFILE #################### */
+
 section.profile{
-	width: 30%;
+	width: 30vw;
 	max-width: 900px;
+	display: inline;
 }
+section.profile > *{
+	margin: auto;
+	margin-top: 10px;
+}
+.profile > .socials{
+    justify-content: center;
+    display: flex;
+    gap: 60px;
+}
+
+/* #################### CONTENT #################### */
+
 section.content{
-	width: 60%;
+	width: 65vw;
 	display: flex;
 	flex-wrap: wrap;
 }
 section.content > div{
-	border: 1px solid black;
-	width: 49.7%;
-	min-width: 300px;
-	height: 100%;
+	min-width: 175px;
+	width: 50%;
 }
 
 section {
@@ -46,9 +60,21 @@ section {
 	border: 1px solid black;
 	height: 90%;
 	margin: auto;
-	min-width: 350px;
+	min-width: 340px;
 }
 
+/* #################### GLOBE #################### */
 .projects .details{
 	width: 50%;
+}
+
+/* #################### MEDIA LAYOUT #################### */
+@media screen and (max-width: 1100px){
+	section.profile, section.content{
+		width: 65vw;
+	}
+	section.content > div{
+		min-width: 175px;
+		width: 100%;
+	}
 }
