@@ -5,6 +5,7 @@
 }
 html {
 	height: 100%;
+	overflow: scroll;
 }
 html body {
 	height: 100%;
@@ -35,12 +36,29 @@ section.profile{
 }
 section.profile > *{
 	margin: auto;
-	margin-top: 10px;
+	margin-top: 20px;
 }
 .profile > .socials{
     justify-content: center;
     display: flex;
-    gap: 60px;
+    gap: 30px;
+	margin-top: 40px;
+}
+
+.profile > .box{
+	border: 1px solid black;
+	width: 70%;
+	padding: 15px;
+	border-radius: 10px;
+}
+
+.socials > a{
+	display: inline-block;
+	background: red;
+	width: 40px;
+	height: 40px;
+	border-radius: 360px;
+	cursor: pointer;
 }
 
 /* #################### CONTENT #################### */
@@ -56,9 +74,9 @@ section.content > div{
 }
 
 section {
-	display: block;
 	border: 1px solid black;
-	height: 90%;
+	min-height: 90%;
+	height: fit-content;
 	margin: auto;
 	min-width: 340px;
 }
@@ -69,9 +87,10 @@ section {
 }
 
 /* #################### MEDIA LAYOUT #################### */
-@media screen and (max-width: 1100px){
+@media screen and (max-width: 1079.9px){
 	section.profile, section.content{
 		width: 65vw;
+		min-width: 400px !important;
 	}
 	section.content > div{
 		min-width: 175px;
