@@ -3,56 +3,75 @@
 	font-family: 'Inconsolata', monospace;
 	padding: 0;
 }
+
 html {
 	height: 100%;
 	overflow: scroll;
 }
+
 html body {
 	height: 100%;
 	background: #f9f9f9;
 }
 
+#intro {
+	text-align: center;
+	padding-top: 45vh;
+	background: #dee8a7;
+	font-size: 36px;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	z-index: 100;
+}
+
 #main-content {
 	transition: 0.5s;
 	height: 100%;
+	gap: 5px;
 	display: flex;
-	gap: 10px;
 	flex-wrap: wrap;
 	color: #0f0f0f;
 }
 
-canvas {
-	position: absolute;
-    transform: translateX(-22.5%);
-	z-index: -100;
+section {
+	min-height: 90%;
+	height: 1000px;
+	margin: auto;
 }
 
 /* #################### PROFILE #################### */
 
-section.profile{
-	width: 30vw;
-	max-width: 900px;
+section.profile {
+	width: 460px;
 	display: inline;
+	background: #bbb;
+	border-radius: 20px;
 }
-section.profile > *{
+
+section.profile>* {
 	margin: auto;
 	margin-top: 20px;
+	width: 400px;
+	background: #bbb;
 }
-.profile > .socials{
-    justify-content: center;
-    display: flex;
-    gap: 30px;
+
+.profile>.socials {
+	justify-content: center;
+	display: flex;
+	gap: 30px;
 	margin-top: 40px;
 }
 
-.profile > .box{
+.profile>.box {
 	border: 1px solid black;
-	width: 70%;
 	padding: 15px;
 	border-radius: 10px;
 }
 
-.socials > a{
+.socials>a {
 	display: inline-block;
 	background: red;
 	width: 40px;
@@ -61,39 +80,74 @@ section.profile > *{
 	cursor: pointer;
 }
 
+/* #################### GLOBE #################### */
+
+#globe {
+	width: 0;
+	height: 0;
+	margin: auto;
+}
+
+#globe>canvas {
+	position: absolute;
+	transform: translateX(-51%);
+	top: 35%;
+	z-index: -100;
+}
+
 /* #################### CONTENT #################### */
 
-section.content{
+section.content {
 	width: 65vw;
 	display: flex;
 	flex-wrap: wrap;
 }
-section.content > div{
+
+section.content>div {
 	min-width: 175px;
-	width: 50%;
+	height: inherit;
 }
 
-section {
-	border: 1px solid black;
-	min-height: 90%;
-	height: fit-content;
-	margin: auto;
-	min-width: 340px;
+section.content>.col-1 {
+	display: inline;
+	width: 60%;
 }
 
-/* #################### GLOBE #################### */
-.projects .details{
-	width: 50%;
+.col-1>.projects {
+	z-index: 100;
+	background: #aaa;
+	padding: 15px;
 }
+
+section.content>.col-2 {
+	width: 39%;
+	overflow: scroll;
+	z-index: 50;
+
+}
+
+.col-2>.tab {
+	width: 100%;
+	height: 100px;
+	border-bottom: 1px solid black;
+}
+
 
 /* #################### MEDIA LAYOUT #################### */
-@media screen and (max-width: 1079.9px){
-	section.profile, section.content{
+@media screen and (max-width: 1370px) {
+
+	section.profile,
+	section.content {
 		width: 65vw;
 		min-width: 400px !important;
 	}
-	section.content > div{
+
+	section.content>div {
 		min-width: 175px;
-		width: 100%;
+		width: 100% !important;
+	}
+
+	#globe>canvas {
+		top: 120%;
 	}
 }

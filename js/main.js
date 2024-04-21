@@ -18,7 +18,7 @@ globe = new Globe(globeWidth, globeHeight, {
     pinColor: "#aacfd1",
 
     satelliteColor: "#aacfd1",
-    scale: 1,
+    scale: 1.25,
     dayLength: 14000,
     introLinesDuration: 2000,
     maxPins: 500,
@@ -27,7 +27,8 @@ globe = new Globe(globeWidth, globeHeight, {
 });
 
 let c = globe.domElement;
-c.style = "filter: invert(1) contrast(0.96)";
+let FILTER = "filter: invert(1) contrast(0.96);" 
+c.style = FILTER;
 
 $('#globe').append(c);
 
@@ -60,12 +61,15 @@ let initGlobe = () => {
             size: 0.6,
         });
 }
-window.addEventListener('resize', () => {
-    // Only resize the globe on height change
+
+const positionGlobe = () => {
     globeHeight = window.innerHeight * globeScale;
     globe.camera.aspect = globeWidth / globeHeight;
     globe.camera.updateProjectionMatrix();
     globe.renderer.setSize(globeWidth, globeHeight);
-})
+}
+
+window.addEventListener('load', () => positionGlobe())
+window.addEventListener('resize', () => positionGlobe())
 
 initGlobe()
