@@ -6,18 +6,21 @@
 
 html {
 	height: 100%;
-	overflow: scroll;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 html body {
 	height: 100%;
 	background: #f9f9f9;
+	margin: 0;
+	padding: 0;
 }
 
 #intro {
 	text-align: center;
 	padding-top: 45vh;
-	background: #dee8a7;
+	background: inherit;
 	font-size: 20px;
 	position: fixed;
 	width: 100vw;
@@ -25,7 +28,7 @@ html body {
 	top: 0;
 	left: 0;
 	z-index: 100;
-	transition: .2s;
+	transition: .5s;
 }
 #intro > span{
 	display: inline-block;
@@ -65,14 +68,15 @@ html body {
 
 section {
 	min-height: 90%;
-	height: 1000px;
+	height: 940px;
 	margin: auto;
 }
 
 /* #################### PROFILE #################### */
 
 section.profile {
-	width: 460px;
+	width: 430px;
+	font-size: 16px;
 	display: inline;
 	background: #bbb;
 	border-radius: 20px;
@@ -81,7 +85,7 @@ section.profile {
 section.profile>* {
 	margin: auto;
 	margin-top: 20px;
-	width: 400px;
+	width: 350px;
 	background: #bbb;
 }
 
@@ -123,12 +127,13 @@ section.profile>* {
 	width: 0;
 	height: 0;
 	margin: auto;
+	margin-top: 100px;
 }
 
 #globe>canvas {
 	position: absolute;
-	transform: translateX(-50%);
-	top: 40%;
+	transform: translateX(-51%);
+	/* top: 40%; */
 	z-index: -100;
 }
 
@@ -152,15 +157,19 @@ section.content>.col-1 {
 }
 
 .col-1>.projects {
-	width: 80%;
+	width: 87.5%;
+	margin: auto;
+	margin-left: 0;
+	overflow: scroll;
+	height: 200px;
 	z-index: 100;
 	background: #aaa;
 	padding: 25px;
 	border-radius: 10px;
-	margin: auto;
 }
 
 section.content>.col-2 {
+	background: red;
 	width: 30%;
 	overflow: scroll;
 	padding-left: 40px;
@@ -192,11 +201,15 @@ section.content>.col-2 {
 		min-width: 175px;
 		width: 100% !important;
 	}
-	.col-1 > .projects{
-		width: 92.5%;
+
+	.col-1 > * {
+		margin: auto !important;
 	}
 
-	#globe>canvas {
-		top: 125%;
+	#globe {
+		margin-top: 90px !important;
+	}
+	#globe > canvas{
+		transform: translateX(-50%);
 	}
 }

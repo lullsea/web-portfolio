@@ -16,9 +16,6 @@ function update(timer){
 
 // TODO: alot of optimization to be done here
 window.addEventListener("load", () => {
-    // characters.forEach((x,i) => {
-    //     setTimeout(() => x.style.transform = "translateY(0px)", 100 * i)
-    // })
     // Swoosh up
     for(let i = 0; i < totalSteps; i++){
         setTimeout(() => {
@@ -50,7 +47,7 @@ window.addEventListener("load", () => {
     }, 125 * characters.length);
         setTimeout(() => {
             characters.forEach(x => x.style = "transition: .1s; transform: translateY(-50px); opacity: 0;")
-            container.style = "opacity: 0; transition: 1s;";
+            container.style.opacity = 0;
             setTimeout(() => container.outerHTML = "", 200);
         }, 3000);
 }

@@ -2,14 +2,12 @@ var $ = require("jquery"),
     Globe = require("encom-globe");
 // #################### GLOBE ####################
 
-var main = $("#main-content")
-
 let globeScale = .5;
 
 let globeWidth = window.innerWidth * globeScale;
 let globeHeight = window.innerHeight * globeScale;
 
-globe = new Globe(globeWidth, globeHeight, {
+globe = new Globe(globeWidth * 2, globeHeight, {
     font: "monospace",
     data: [],
     tiles: grid.tiles,
@@ -61,15 +59,5 @@ let initGlobe = () => {
             size: 0.6,
         });
 }
-
-const positionGlobe = () => {
-    globeHeight = window.innerHeight * globeScale;
-    globe.camera.aspect = globeWidth / globeHeight;
-    globe.camera.updateProjectionMatrix();
-    globe.renderer.setSize(globeWidth, globeHeight);
-}
-
-window.addEventListener('load', () => positionGlobe())
-window.addEventListener('resize', () => positionGlobe())
 
 initGlobe()
