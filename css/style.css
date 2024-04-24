@@ -18,26 +18,30 @@ html body {
 	text-align: center;
 	padding-top: 45vh;
 	background: #dee8a7;
-	font-size: 36px;
+	font-size: 20px;
 	position: fixed;
 	width: 100vw;
 	height: 100vh;
 	top: 0;
 	left: 0;
 	z-index: 100;
+	transition: .2s;
 }
 #intro > span{
 	display: inline-block;
 	position: relative;
 	transition: transform .1s ease-out, opacity .2s ease-in;
-	transform: translateY(75px);
+	transform: translateY(90px);
+	width: 40px;
 	opacity: 0;
 	font-family: monospace;
-	margin-right: 5px;
+	font-size: 32px;
+	margin-left: 5px;
 }
 #intro > span > i{
-	font-size: 23px;
 	transform: scale(1.5);
+	font-size: 24px;
+	margin-right: 13px;
 }
 #intro > span > .cover{
 	width: 0px;
@@ -45,8 +49,9 @@ html body {
 	position: absolute;
 	background: black;
 	transform: translate(-10px, 0);
+	overflow: hidden;
 	z-index:100;
-	transition: .2s;
+	transition: width .2s, margin .2s, background 0s;
 }
 
 
