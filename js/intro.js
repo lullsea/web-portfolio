@@ -23,6 +23,7 @@ window.addEventListener("load", () => {
             characters[totalSteps - i - 1].style = "transform: translateY(0px); opacity: 1";
     }, 100 * i);
     }
+    // Box cover
     setTimeout(() => {
         characters.forEach(x => {
             x.innerHTML = "<div class='cover'></div>" + x.innerHTML;
@@ -39,16 +40,19 @@ window.addEventListener("load", () => {
                     }, 20 * j)
         }, 500)
 
+        // Cover closing
         setTimeout(() => covers.forEach(x => {
             x.style.background = "black";
             x.style.margin = "0 0 0 50px";
             x.style.width = "0px"}), 1000);
             setTimeout(() => icons.forEach((x, i) => x.outerHTML = lullsea[i] + "&nbsp;"), 450)
-    }, 125 * characters.length);
-        setTimeout(() => {
-            characters.forEach(x => x.style = "transition: .1s; transform: translateY(-50px); opacity: 0;")
-            container.style.opacity = 0;
-            setTimeout(() => container.outerHTML = "", 200);
-        }, 3000);
+    }, 140 * characters.length);
+    
+    // Intro finish
+    setTimeout(() => {
+        characters.forEach(x => x.style = "transition: .1s; transform: translateY(-50px); opacity: 0;")
+        container.style.opacity = 0;
+        setTimeout(() => container.outerHTML = "", 200);
+    }, 3100);
 }
 );

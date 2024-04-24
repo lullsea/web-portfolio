@@ -156,16 +156,35 @@ section.content>.col-1 {
 	width: 65%;
 }
 
-.col-1>.projects {
-	width: 87.5%;
+.col-1>.languages {
+	width: 88.5%;
 	margin: auto;
 	margin-left: 0;
 	overflow: scroll;
-	height: 200px;
+	height: 250px;
 	z-index: 100;
 	background: #aaa;
 	padding: 25px;
 	border-radius: 10px;
+}
+
+.folder{
+	display: inline-block;
+	flex-direction: column;
+	text-align: center;
+	font-size: 15px;
+	margin: 20px 0 0 62px;
+	width: 80px;
+}
+
+.folder > i{
+	font-size: 52px;
+	width: 100%;
+}
+.folder:hover{
+	i{
+		color: red;
+	}
 }
 
 section.content>.col-2 {

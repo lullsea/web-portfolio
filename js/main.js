@@ -56,7 +56,7 @@ let initGlobe = () => {
     globe.addConstellation(constellation, {
             coreColor: "#bac",
             numWaves: 8,
-            size: 0.6,
+            size: 0.8,
         });
 }
 
