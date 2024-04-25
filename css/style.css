@@ -28,7 +28,7 @@ html body {
 	top: 0;
 	left: 0;
 	z-index: 100;
-	transition: .5s;
+	transition: opacity .5s;
 }
 #intro > span{
 	display: inline-block;
@@ -78,15 +78,13 @@ section.profile {
 	width: 430px;
 	font-size: 16px;
 	display: inline;
-	background: #bbb;
+	background: #A2AAAB;
 	border-radius: 20px;
 }
 
-section.profile>* {
+section.profile > *{
 	margin: auto;
 	margin-top: 20px;
-	width: 350px;
-	background: #bbb;
 }
 
 .profile>.socials {
@@ -116,9 +114,10 @@ section.profile>* {
 }
 
 .profile>.box {
-	border: 1px solid black;
-	padding: 15px;
-	border-radius: 10px;
+	border-bottom: 1px solid black;
+	padding-bottom: 15px;
+	width: 80%;
+	min-width: 350px;
 }
 
 /* #################### GLOBE #################### */
@@ -161,9 +160,10 @@ section.content>.col-1 {
 	margin: auto;
 	margin-left: 0;
 	overflow: scroll;
-	height: 250px;
+	height: 260px;
+	overflow: hidden;
 	z-index: 100;
-	background: #aaa;
+	background: #A2AAAB;
 	padding: 25px;
 	border-radius: 10px;
 }
@@ -175,20 +175,38 @@ section.content>.col-1 {
 	font-size: 15px;
 	margin: 20px 0 0 62px;
 	width: 80px;
+	transform: translateY(-30px);
 }
 
-.folder > i{
+.folder > i.folder-ico{
 	font-size: 52px;
 	width: 100%;
 }
+.folder > i.lang-ico{
+	font-size: 22px;
+	transform: translateY(45px);
+	color: white;
+	transition: .2s;
+}
+
+
 .folder:hover{
-	i{
-		color: red;
+	.fa-react{
+		color: lightblue;
+	}
+	.fa-mug-hot{
+		color: orange;
+	}
+	.fa-circle{
+		color: violet;
+	}
+	.fa-html5{
+		color: coral;
 	}
 }
 
 section.content>.col-2 {
-	background: red;
+	background: #A2AAAB;
 	width: 30%;
 	overflow: scroll;
 	padding-left: 40px;
@@ -214,8 +232,12 @@ section.content>.col-2 {
 		width: 80vw;
 		min-width: 400px !important;
 		margin: auto;
+		margin-top: 20px;
 	}
 
+	.profile{
+		max-width: 550px;
+	}
 	section.content>div {
 		min-width: 175px;
 		width: 100% !important;
@@ -223,6 +245,9 @@ section.content>.col-2 {
 
 	.col-1 > * {
 		margin: auto !important;
+	}
+	.languages{
+		overflow-y: scroll;
 	}
 
 	#globe {
