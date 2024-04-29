@@ -177,6 +177,15 @@ section.content>.col-1 {
 	width: 80px;
 	transform: translateY(-30px);
 }
+.folder > input[type="checkbox"]{
+	position: absolute;
+	width: 80%;
+	height: 80%;
+	z-index: 50;
+	opacity: 0;
+	transform: translateX(-25px);
+
+}
 
 .folder > i.folder-ico{
 	font-size: 52px;
@@ -191,17 +200,21 @@ section.content>.col-1 {
 
 
 .folder:hover{
+	z-index: 100;
 	.fa-react{
 		color: lightblue;
 	}
-	.fa-mug-hot{
+	.fa-java{
 		color: orange;
-	}
-	.fa-circle{
-		color: violet;
 	}
 	.fa-html5{
 		color: coral;
+	}
+	.fa-python{
+		color: lime;
+	}
+	.fa-stumbleupon{
+		color: violet;
 	}
 }
 
@@ -247,7 +260,7 @@ section.content>.col-2 {
 		margin: auto !important;
 	}
 	.languages{
-		overflow-y: scroll;
+		overflow: scroll !important;
 	}
 
 	#globe {

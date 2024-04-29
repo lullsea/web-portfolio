@@ -52,7 +52,7 @@ window.addEventListener("focus", () => {
     setTimeout(() => {
         characters.forEach(x => x.style = "transition: .1s; transform: translateY(-50px); opacity: 0;")
         container.style.opacity = 0;
-        setTimeout(() => container.outerHTML = "", 200);
+        setTimeout(() => container.outerHTML = "", 100);
     }, 3100);
 }
 );
