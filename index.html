@@ -1,129 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-        <meta name="description" content="(LULLSEA) I'm a developer based in Southeast Asia who uses React, NodeJS, Python, Java and more."/>
-        <title>Lullsea</title>
-        <link rel="stylesheet" href="css/style.css"/>
-        <script src="https://kit.fontawesome.com/3df08dae2e.js" crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script src="./globe-grid.js"></script>
-        </script>
-    </head>
-    <body>
-        <div id="intro">
-            <span><i class="fa-solid fa-display"></i>&nbsp;</span>
-            <span><i class="fa-solid fa-umbrella"></i>&nbsp;</span>
-            <span><i class="fa-solid fa-feather"></i>&nbsp;</span>
-            <span><i class="fa-solid fa-gear"></i>&nbsp;</span>
-            <span><i class="fa-solid fa-flask"></i>&nbsp;</span>
-            <span><i class="fa-solid fa-fish"></i>&nbsp;</span>
-            <span><i class="fa-solid fa-trophy"></i>&nbsp;</span>
-        </div>
-        <div id="main-content">
-            <section class="profile">
-                <div id="profile-picture" style="background: black; height: 250px; width: 250px !important;  border-radius: 360px; overflow: hidden;">
-                    <img src="img/koi.png" style="width: inherit; height: inherit"/>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description"
+        content="(LULLSEA) I'm a developer based in Southeast Asia who uses React, NodeJS, Python, Java and more." />
+    <title>Lullsea</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://kit.fontawesome.com/3df08dae2e.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./globe-grid.js"></script>
+    </script>
+</head>
+
+<body>
+    <div id="intro">
+        <span><i class="fa-solid fa-display"></i>&nbsp;</span>
+        <span><i class="fa-solid fa-umbrella"></i>&nbsp;</span>
+        <span><i class="fa-solid fa-feather"></i>&nbsp;</span>
+        <span><i class="fa-solid fa-gear"></i>&nbsp;</span>
+        <span><i class="fa-solid fa-flask"></i>&nbsp;</span>
+        <span><i class="fa-solid fa-fish"></i>&nbsp;</span>
+        <span><i class="fa-solid fa-trophy"></i>&nbsp;</span>
+    </div>
+    <div id="main-content">
+        <section class="profile">
+            <div id="profile-picture"
+                style="background: black; height: 250px; width: 250px !important;  border-radius: 360px; overflow: hidden;">
+                <img src="img/koi.png" style="width: inherit; height: inherit" />
+            </div>
+            <div class="socials">
+                <a target=”_blank” href="https://www.patreon.com">
+                    <i class="fa-brands fa-patreon"></i>
+                </a>
+                <a target=”_blank” href="https://www.github.com/lullsea">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a target=”_blank”>
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a target=”_blank” href="https://www.twitter.com">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a target=”_blank”>
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+            <div class="box about">
+                <strong>LULLSEA</strong>: I'm a developer based in <strong>Southeast Asia</strong>
+                who has been programming since the age of 12.
+                Passionate about creating innovative solutions and bringing ideas to life through code, I thrive on the
+                challenges and creativity that programming presents.
+            </div>
+            <div class="box age">
+                <strong style="text-decoration: underline;">Age (years)</strong><br />
+                <span id="age" style="font-size: 22px;"></span>
+            </div>
+        </section>
+        <section class="content">
+
+            <div class="col-1">
+                <div class="languages">
+                    <div><strong>Some tools that I've used</strong></div>
+                    <hr>
+                    <div class="folder">
+                        <input type="checkbox" name="react" id="react-check">
+                        <i class="lang-ico fa-brands fa-react"></i>
+                        <i class="folder-ico fa-solid fa-folder-closed"></i>
+                        <span class="lang-text">React
+                            <span class="underline"></span>
+                        </span>
+                    </div>
+                    <div class="folder">
+                        <input type="checkbox" name="html" id="html-check">
+                        <i class="lang-ico fa-brands fa-html5"></i>
+                        <i class="folder-ico fa-solid fa-folder-closed"></i>
+                        <span class="lang-text">HTML/CSS
+                            <span class="underline"></span>
+                        </span>
+                    </div>
+                    <div class="folder">
+                        <input type="checkbox" name="java" id="java-check">
+                        <i class="lang-ico fa-brands fa-java"></i>
+                        <i class="folder-ico fa-solid fa-folder-closed"></i>
+                        <span class="lang-text">Java
+                            <span class="underline"></span>
+                        </span>
+                    </div>
+                    <div class="folder">
+                        <input type="checkbox" name="python" id="python-check">
+                        <i class="lang-ico fa-brands fa-python"></i>
+                        <i class="folder-ico fa-solid fa-folder-closed"></i>
+                        <span class="lang-text">Python
+                            <span class="underline"></span>
+                        </span>
+                    </div>
+                    <div class="folder">
+                        <input type="checkbox" name="others" id="others-check">
+                        <i class="lang-ico fa-brands fa-stumbleupon"></i>
+                        <i class="folder-ico fa-solid fa-folder-closed"></i>
+                        <span class="lang-text">Others
+                            <span class="underline"></span>
+                        </span>
+                    </div>
                 </div>
-                <div class="socials">
-                    <a target=”_blank” href="https://www.patreon.com">
-                        <i class="fa-brands fa-patreon"></i>
-                    </a>
-                    <a target=”_blank” href="https://www.github.com/lullsea">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                    <a target=”_blank”>
-                        <i class="fa-brands fa-linkedin"></i>
-                    </a>
-                    <a target=”_blank” href="https://www.twitter.com" >
-                        <i class="fa-brands fa-twitter"></i>
-                    </a>
-                    <a target=”_blank”>
-                        <i class="fa-solid fa-envelope"></i>
-                    </a>
-                </div>
-                <div class="box about">
-                    <strong>LULLSEA</strong>: I'm a developer based in <strong>Southeast Asia</strong>
-                    who has been programming since the age of 12. 
-                    Passionate about creating innovative solutions and bringing ideas to life through code, I thrive on the challenges and creativity that programming presents.
-                </div>
-                <div class="box age">
-                    <strong style="text-decoration: underline;">Age (years)</strong><br/>
-                    <span id="age" style="font-size: 22px;"></span>
-                </div>
+                <div id="globe"></div>
+            </div>
+            <div class="col-2">
                 <div class="box experience">
                     WORK EXPERIENCE BOX
-                    Lorem ipsum dolor sit amet consectetur adipisicing 
+                    Lorem ipsum dolor sit amet consectetur adipisicing
                 </div>
-            </section>
-            <section class="content">
 
-                <div class="col-1">
-                    <div class="languages">
-                        <div><strong>Some tools that I've used</strong></div>
-                        <hr>
-                        <div class="folder">
-                            <input type="checkbox" name="react" id="react-check">
-                            <i class="lang-ico fa-brands fa-react"></i>
-                            <i class="folder-ico fa-solid fa-folder-closed"></i>
-                            React
-                        </div>
-                        <div class="folder">
-                            <input type="checkbox" name="html" id="html-check">
-                            <i class="lang-ico fa-brands fa-html5"></i>
-                            <i class="folder-ico fa-solid fa-folder-closed"></i>
-                            HTML/CSS
-                        </div>
-                        <div class="folder">
-                            <input type="checkbox" name="java" id="java-check">
-                            <i class="lang-ico fa-brands fa-java"></i>
-                            <i class="folder-ico fa-solid fa-folder-closed"></i>
-                            Java
-                        </div>
-                        <div class="folder">
-                            <input type="checkbox" name="python" id="python-check">
-                            <i class="lang-ico fa-brands fa-python"></i>
-                            <i class="folder-ico fa-solid fa-folder-closed"></i>
-                            Python
-                        </div>
-                        <div class="folder">
-                            <input type="checkbox" name="others" id="others-check">
-                            <i class="lang-ico fa-brands fa-stumbleupon"></i>
-                            <i class="folder-ico fa-solid fa-folder-closed"></i>
-                            Others
-                        </div>
-                    </div>
-                    <div id="globe"></div>
-                </div>
-                <div class="col-2">
-                    <div class="tab">aabsd</div>
-                    <div class="tab"></div>
-                    <div class="tab"></div>
-                    <div class="tab"></div>
-                    <div class="tab"></div>
-                    <div class="tab"></div>
-                    <div class="tab"></div>
-                    <div class="tab"></div>
-                    <div class="tab"></div>
-                    <div class="tab"></div>
-                    <div class="tab"></div>
-                    <div class="tab"></div>
-                    <div class="tab"></div>
-                    <div class="tab"></div>
-                    <div class="tab"></div>
-                    <div class="tab"></div>
-                    <div class="tab"></div>
-                    <div class="tab"></div>
-                    <div class="tab"></div>
-                    <div class="tab"></div>
-                    <div class="tab"></div>
-            </section>
-        </div>
-    </body>
+            </div>
+        </section>
+    </div>
+</body>
+
 </html>
-<script type="text/javascript" src="./js/intro.js"></script>
-<script type="text/javascript" src="./build/build.js"></script>
-<script type="text/javascript" src="./js/age.js"></script>
-<script type="text/javascript" src="./js/lang.js"></script>
+<script type="text/javascript" src="./build/intro.js"></script>
+<script type="text/javascript" src="./build/globe.js"></script>
+<script type="text/javascript" src="./build/age.js"></script>
+<script type="text/javascript" src="./build/lang.js"></script>
