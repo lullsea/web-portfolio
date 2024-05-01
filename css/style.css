@@ -160,7 +160,7 @@ section.content>.col-1 {
 	margin: auto;
 	margin-left: 0;
 	overflow: scroll;
-	height: 260px;
+	height: fit-content;
 	overflow: hidden;
 	z-index: 100;
 	background: #A2AAAB;
@@ -175,6 +175,7 @@ section.content>.col-1 {
 	font-size: 15px;
 	margin: 20px 0 0 62px;
 	width: 80px;
+	height: 96px;
 	transform: translateY(-30px);
 }
 .folder > input[type="checkbox"]{
@@ -193,8 +194,8 @@ section.content>.col-1 {
 	width: 100%;
 }
 .folder > i.lang-ico{
-	font-size: 22px;
-	transform: translateY(45px);
+	font-size: 21px;
+	transform: translateY(46px);
 	color: white;
 	transition: .2s;
 }
@@ -208,10 +209,21 @@ section.content>.col-1 {
 	height: 2px;
 	margin: 0 auto;
 	width: 0;
-	transition: width .25s linear;
+	transition: width .2s linear;
 	background: black;
 }
-.folder:hover{
+#svg-anims{
+	position: absolute;
+	overflow:visible;
+	top:0;
+	left:0;
+	pointer-events: none;
+	line{
+		stroke: black;
+		stroke-width: 2px;
+	}
+}
+.folder:hover, .folder.active{
 	z-index: 100;
 	.fa-react{
 		color: lightblue;
@@ -231,16 +243,19 @@ section.content>.col-1 {
 	.lang-text{
 		background: #999;
 	}
+	.lang-text > .underline{
+		width: 100%;
+	}
 }
-*:hover > * > .underline, .underline.active{
-	width: 100%;
+.folder.active > .lang-ico{
+	opacity: 0 !important;
 }
 
 section.content>.col-2 {
 	background: #A2AAAB;
 	width: 30%;
 	overflow: scroll;
-	padding-left: 40px;
+	margin-left: 40px;
 	z-index: 50;
 }
 
@@ -277,13 +292,13 @@ section.content>.col-2 {
 	.col-1 > * {
 		margin: auto !important;
 	}
-	.languages{
-		overflow: scroll !important;
+	.col-2 {
+		width: 100% !important;
+		margin: 0 !important;
 	}
-
-	#globe {
-		margin-top: 90px !important;
-	}
+	/* #globe {
+		margin-top: 70px !important;
+	} */
 	#globe > canvas{
 		transform: translateX(-50%);
 	}
