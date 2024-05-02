@@ -59,6 +59,7 @@ html body {
 
 
 #main-content {
+	padding-top: 20px;
 	transition: 0.5s;
 	height: 100%;
 	display: flex;
@@ -218,9 +219,10 @@ section.content>.col-1 {
 	top:0;
 	left:0;
 	pointer-events: none;
-	line{
+	rect, line{
+		fill: none;
 		stroke: black;
-		stroke-width: 2px;
+		stroke-width: 3px;
 	}
 }
 .folder:hover, .folder.active{
