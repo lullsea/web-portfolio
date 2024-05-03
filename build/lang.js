@@ -6,7 +6,9 @@ const line1 = svgContainer.querySelector("#linedown1");
 const line2 = svgContainer.querySelector("#linedown2");
 const lineleft = svgContainer.querySelector("#lineleft");
 const lineright = svgContainer.querySelector("#lineright");
-const rect = svgContainer.querySelector("#col2-rect");
+const rect1 = svgContainer.querySelector("#col2-rect1");
+const rect2 = svgContainer.querySelector("#col2-rect2");
+let isWide = window.innerWidth > 1375;
 
 // Starting folder positions
 let posX = null;
@@ -16,25 +18,25 @@ let posY2 = null;
 
 let current = null;
 
-const disableAllCheckboxes = (y) => checkboxes.forEach(x => {if(x != y) x.checked = false});
+const disableAllCheckboxes = (y) => checkboxes.forEach(x => { if (x != y) x.checked = false });
 const toggleChecks = (b) => checkboxes.forEach(x => b ? x.setAttribute("disabled", true) : x.removeAttribute("disabled"));
 
 
 disableAllCheckboxes(null);
 
 function setAttributes(el, attrs) {
-  for(var key in attrs) {
-    el.setAttribute(key, attrs[key]);
-  }
+    for (var key in attrs) {
+        el.setAttribute(key, attrs[key]);
+    }
 }
 
-function positionSvg(startPos, offsetX = 0, offsetY = 0){
+function positionSvg(startPos, offsetX = 0, offsetY = 0) {
     const pos2 = document.querySelector(".col-2").getBoundingClientRect();
     posY = window.scrollY + startPos.top + offsetY
     posX = window.scrollX + startPos.left + offsetX
     // Calculate how far the line needs to reach down based on window width
-    posY2 = window.innerWidth > 1375 ? pos2.height / 2.3 : window.scrollY + pos2.top;
-    posX2 = window.innerWidth > 1375 ? pos2.left : posX;
+    posY2 = isWide ? pos2.height / 2.3 : window.scrollY + pos2.top;
+    posX2 = isWide ? pos2.left : posX;
 
 
     // setAttributes(rect, {
@@ -44,51 +46,53 @@ function positionSvg(startPos, offsetX = 0, offsetY = 0){
     //     "height": pos2.height
     // })
 
-    let col2Dimension = (pos2.height * 2)
-    rect.style.strokeDasharray = col2Dimension;
 
-    setAttributes(line1, {
-        "x1": posX,
-        "x2": posX,
-        "y1": posY,
-        "y2": posY2
-    })
+    setAttributes(line1, { "x1": posX, "x2": posX, "y1": posY, "y2": posY2 })
+    setAttributes(line2, { "x1": posX, "x2": posX2, "y1": posY2, "y2": posY2 })
 
-    setAttributes(line2, {
-        "x1": posX,
-        "x2": posX2,
-        "y1": posY2,
-        "y2": posY2
-    })
     setAttributes(lineleft, {
-        "x1": posX2 - 2,
-        "x2": posX2 - 2,
-        "y1": posY2,
+        "x1": isWide ? posX2 - 1 : posX,
+        "x2": isWide ? posX2 - 1 : pos2.x,
+        "y1": isWide ? posY2 : window.scrollY + pos2.y,
         "y2": window.scrollY + pos2.y,
     })
     setAttributes(lineright, {
-        "x1": posX2 - 2,
-        "x2": posX2 - 2,
-        "y1": posY2,
-        "y2": window.scrollY + pos2.height + pos2.y,
+        "x1": isWide ? posX2 - 1 : posX,
+        "x2": isWide ? posX2 - 1 : pos2.x + pos2.width,
+        "y1": isWide ? posY2 : window.scrollY + pos2.y,
+        "y2": isWide ? window.scrollY + pos2.height + pos2.y : window.scrollY + pos2.y,
+    })
+    setAttributes(rect1, {
+        "x": pos2.x - 1,
+        "y": window.scrollY + pos2.y - 1,
+        "width": pos2.width + 2,
+        "height": pos2.height + 3,
+    })
+    setAttributes(rect2, {
+        "x": pos2.x - 1,
+        "y": window.scrollY + pos2.y -1,
+        "width": pos2.width + 2,
+        "height": pos2.height + 3,
     })
 
-    line1.style.strokeDasharray = `${posY2 - posY}px`    // rect2.setAttribute("x", pos2.x);
-    line1.style.strokeDashoffset = `${posY2 - posY}px`;
-    line2.style.strokeDasharray = `${posX2 - posX}px`;
-    line2.style.strokeDashoffset = `${posX2 - posX}px`;
+    // rect2.setAttribute("x", pos2.x);
 
-    lineleft.style.strokeDasharray =  `${posY2 - pos2.y}px`;
-    lineleft.style.strokeDashoffset = `${posY2 - pos2.y}px`;
+    const col2Dimension = (pos2.height * 2) + (pos2.width * 2)
+    rect1.style.strokeDasharray = rect1.style.strokeDashoffset = col2Dimension;
+    rect2.style.strokeDasharray = col2Dimension; 
+    rect2.style.strokeDashoffset = -col2Dimension;
 
-    lineright.style.strokeDasharray =  `${pos2.height}px`;
-    lineright.style.strokeDashoffset = `${pos2.height}px`;
+    line1.style.strokeDasharray = line1.style.strokeDashoffset = `${posY2 - posY}px`;
+    line2.style.strokeDasharray = line2.style.strokeDashoffset = `${posX2 - posX}px`;
 
+    // TODO: fix this on resize
+    lineleft.style.strokeDasharray = lineleft.style.strokeDashoffset = isWide ? `${posY2 - pos2.y}px` : `${posX - pos2.x}`;
+    lineright.style.strokeDasharray = lineright.style.strokeDashoffset = isWide ? `${pos2.height}px` : `${pos2.x + pos2.width - posX}px`;
 }
-function animate(){
+function animate() {
     setTimeout(() => {
         // Line1 go down
-        line1.style.transition = '.2s';
+        line1.style.transition = isWide ? '.2s' : '.6s';
         line1.style.strokeDashoffset = 0
         setTimeout(() => {
             // Line2 go right or nothing depending on window width
@@ -104,14 +108,18 @@ function animate(){
                 lineleft.style.transition = '.2s';
                 lineright.style.strokeDashoffset = 0;
                 lineright.style.transition = '.2s';
+
+                rect2.style.transition = '1s';
+                rect2.style.strokeDashoffset = -100;
                 setTimeout(() => {
-                // Finish animation
-                    line1.style.transition = 'none';
-                    line2.style.transition = 'none'
-                    lineleft.style.transition = 'none';
-                    lineright.style.transition = 'none'
-                    toggleChecks(false);
+                    rect1.style.transition = '.7s';
+                    rect1.style.strokeDashoffset = 0;
+                    setTimeout(() => {
+                        // Finish animation
+                        line1.style.transition = line2.style.transition = lineleft.style.transition = lineright.style.transition = rect1.style.transition = rect2.style.transition = 'none'
+                        toggleChecks(false);
                     }, 350)
+                }, 200)
             }, 190)
         }, 175)
     }, 50);
@@ -121,17 +129,17 @@ function toggleStyles() {
     checkboxes.forEach(x => {
         const parent = x.parentElement;
         const folder = x.parentElement.querySelector(".folder-ico");
-        const icon =  x.parentElement.querySelector(".lang-ico");
+        const icon = x.parentElement.querySelector(".lang-ico");
         const folderPos = folder.getBoundingClientRect();
 
-        if(x.checked){
+        if (x.checked) {
             current = x;
             folder.classList.replace("fa-folder-closed", "fa-folder-open");
             parent.classList.add("active");
             positionSvg(folderPos, folderPos.width / 2, folderPos.height + 22, true);
             animate();
-        }else{
-            if(x == current)
+        } else {
+            if (x == current)
                 current = null;
             icon.style.opacity = 1;
             folder.classList.replace("fa-folder-open", "fa-folder-closed");
@@ -143,14 +151,15 @@ function toggleStyles() {
 
 // Reposition svgs
 window.addEventListener('resize', () => {
-    if(current != null){
+    isWide = window.innerWidth > 1375;
+    if (current != null) {
         const pos = current.getBoundingClientRect();
-        positionSvg(pos, pos.width/2, pos.height - 12);
+        positionSvg(pos, pos.width / 2, pos.height - 12);
     }
 })
 
 checkboxes.forEach(x => x.addEventListener("change", () => {
-    if(x.checked){
+    if (x.checked) {
         disableAllCheckboxes(x);
         toggleChecks(true);
     }

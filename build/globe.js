@@ -61,7 +61,7 @@ let initGlobe = () => {
         });
 }
 
-initGlobe()
+setTimeout(initGlobe, 2750);
 
 },{"encom-globe":2,"jquery":13}],2:[function(require,module,exports){
 var TWEEN = require('tween.js'),

@@ -60,4 +60,4 @@ let initGlobe = () => {
         });
 }
 
-initGlobe()
+setTimeout(initGlobe, 2750);
