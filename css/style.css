@@ -73,6 +73,23 @@ section {
 	margin: auto;
 }
 
+#loading{
+	position: fixed;
+	width: 500px;
+	height: 150px;
+	top: 50%;
+	left: 50%;
+
+	margin-left: -250px;
+	margin-top: -150px;
+
+	background: white;
+	canvas{
+		width: 100%;
+		height: 200px;
+	}
+}
+
 /* #################### PROFILE #################### */
 
 section.profile {
@@ -153,11 +170,11 @@ section.content>div {
 
 section.content>.col-1 {
 	display: inline;
-	width: 65%;
+	width: 64%;
 }
 
 .col-1>.languages {
-	width: 88.5%;
+	width: 86%;
 	margin: auto;
 	margin-left: 0;
 	overflow: scroll;
@@ -255,12 +272,14 @@ section.content>.col-1 {
 
 section.content>.col-2 {
 	background: #A2AAAB;
-	width: 30%;
+	width: 36%;
 	overflow: scroll;
-	margin-left: 40px;
 	z-index: 50;
 }
 
+.experience{
+	margin: 20px;
+}
 .col-2>.tab {
 	margin: auto;
 	width: 80%;

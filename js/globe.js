@@ -59,5 +59,4 @@ let initGlobe = () => {
             size: 0.8,
         });
 }
-
-setTimeout(initGlobe, 2750);
+window.addEventListener('load', () => setTimeout(initGlobe, 2750));

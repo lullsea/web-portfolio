@@ -60,8 +60,7 @@ let initGlobe = () => {
             size: 0.8,
         });
 }
-
-setTimeout(initGlobe, 2750);
+window.addEventListener('load', () => setTimeout(initGlobe, 2750));
 
 },{"encom-globe":2,"jquery":13}],2:[function(require,module,exports){
 var TWEEN = require('tween.js'),
