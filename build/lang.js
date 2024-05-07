@@ -25,7 +25,7 @@ const toggleChecks = (b) => checkboxes.forEach(x => b ? x.setAttribute("disabled
 
 disableAllCheckboxes(null);
 
-function disableSvgRects(){
+function disableSvgRects() {
     rect1.style.strokeDashoffset = rect1.style.strokeDasharray;
     rect2.style.strokeDashoffset = `-${rect2.style.strokeDasharray}`;
     lineleft.style.strokeDashoffset = lineleft.style.strokeDasharray;
@@ -84,19 +84,21 @@ function positionSvg(startPos, offsetX = 0, offsetY = 0) {
     rect1.style.strokeDasharray = col2Dimension;
     rect2.style.strokeDasharray = col2Dimension;
 
-    if(isLangChanged == true) disableSvgRects();
+    if (isLangChanged == true) disableSvgRects();
 
     line1.style.strokeDasharray = line1.style.strokeDashoffset = `${posY2 - posY}px`;
     line2.style.strokeDasharray = line2.style.strokeDashoffset = `${posX2 - posX}px`;
 
     // TODO: fix this on resize
     lineleft.style.strokeDasharray = lineleft.style.strokeDashoffset = isWide ? `${posY2 - pos2.y}px` : `${posX - pos2.x}`;
-    lineright.style.strokeDasharray =  lineright.style.strokeDashoffset = isWide ? `${pos2.height}px` : `${pos2.x + pos2.width - posX}px`;
+    lineright.style.strokeDasharray = lineright.style.strokeDashoffset = isWide ? `${pos2.height}px` : `${pos2.x + pos2.width - posX}px`;
 }
 function animate() {
+    document.getElementById("loading").style.height = "200px";
     setTimeout(() => {
         // Line1 go down
         line1.style.transition = isWide ? '.2s' : '.6s';
+        document.getElementById("loading").style.height = 0;
         line1.style.strokeDashoffset = 0
         setTimeout(() => {
             // Line2 go right or nothing depending on window width
@@ -129,7 +131,7 @@ function animate() {
                 }, 200)
             }, 120)
         }, 175)
-    }, 50);
+    }, 700);
 }
 
 function toggleStyles() {
@@ -142,7 +144,7 @@ function toggleStyles() {
         let name = x.getAttribute("name");
 
         if (x.checked) {
-            if(activeLang != name)
+            if (activeLang != name)
                 isLangChanged = true;
             activeLang = name;
             folder.classList.replace("fa-folder-closed", "fa-folder-open");
@@ -151,7 +153,7 @@ function toggleStyles() {
             positionSvg(folderPos, folderPos.width / 2, folderPos.height + 22, true);
             animate();
         } else {
-            if(activeLang == name){
+            if (activeLang == name) {
                 activeLang = null;
                 isLangChanged = true;
                 disableSvgRects();
@@ -162,14 +164,14 @@ function toggleStyles() {
         }
         isLangChanged = false;
     }
-)
+    )
 }
 
 // Reposition svgs
 window.addEventListener('resize', () => {
     isWide = window.innerWidth > 1375;
     // TODO
-    if(activeLang != null){
+    if (activeLang != null) {
         const pos = document.getElementsByName(activeLang)[0].getBoundingClientRect();
         positionSvg(pos, pos.width / 2, pos.height - 12);
     }
@@ -182,3 +184,9 @@ checkboxes.forEach(x => x.addEventListener("change", () => {
     }
     toggleStyles();
 }))
+
+let b = false;
+setInterval(() => {
+    document.getElementById("loading-dots").innerHTML = b ? "● ● ● ● ●" : "● ● ● ● &nbsp;"
+    b = !b;
+}, 200)

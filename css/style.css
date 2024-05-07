@@ -75,20 +75,28 @@ section {
 
 #loading{
 	position: fixed;
-	width: 500px;
-	height: 150px;
-	top: 50%;
-	left: 50%;
+	width: 25vw;
+	min-width: 400px;
+	height: 0;
+	transition: .1s;
+	background: lightgray;
+	box-shadow: 10px;
+	overflow: hidden;
+	top: 39%;
+	left: 51%;
+	transform: translate(-50%, -50%);
+	pointer-events: none;
 
-	margin-left: -250px;
-	margin-top: -150px;
-
-	background: white;
 	canvas{
 		width: 100%;
-		height: 200px;
+		height: 125px;
+	}
+	footer{ 
+		text-align: center;
+		padding-top: 17.5px;
 	}
 }
+
 
 /* #################### PROFILE #################### */
 
