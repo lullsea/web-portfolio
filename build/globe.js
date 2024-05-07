@@ -40,7 +40,7 @@ function animate() {
 let initGlobe = () => {
     globe.init();
     animate();
-    globe.addMarker(3.1319, 101.6841, "Kuala Lumpur", true);
+    globe.addMarker(3.1319, 101.6841, "Kuala Lumpur");
     var constellation = [];
     var alt = 1;
 

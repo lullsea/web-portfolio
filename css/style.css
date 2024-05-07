@@ -1,3 +1,7 @@
+:root{
+	--background: #f9f9f9;
+	--card-background: #C2C0C5;
+}
 /* #################### MAIN #################### */
 * {
 	font-family: 'Inconsolata', monospace;
@@ -12,7 +16,7 @@ html {
 
 html body {
 	height: 100%;
-	background: #f9f9f9;
+	background: var(--background);
 	margin: 0;
 	padding: 0;
 }
@@ -75,6 +79,7 @@ section {
 
 #loading{
 	position: fixed;
+	z-index:999;
 	width: 25vw;
 	min-width: 400px;
 	height: 0;
@@ -104,7 +109,7 @@ section.profile {
 	width: 430px;
 	font-size: 16px;
 	display: inline;
-	background: #A2AAAB;
+	background: var(--card-background);
 	border-radius: 20px;
 }
 
@@ -189,7 +194,7 @@ section.content>.col-1 {
 	height: fit-content;
 	overflow: hidden;
 	z-index: 100;
-	background: #A2AAAB;
+	background: var(--card-background);
 	padding: 25px;
 	border-radius: 10px;
 }
@@ -279,7 +284,7 @@ section.content>.col-1 {
 }
 
 section.content>.col-2 {
-	background: #A2AAAB;
+	background: var(--card-background);
 	width: 36%;
 	overflow: scroll;
 	z-index: 50;
@@ -295,6 +300,33 @@ section.content>.col-2 {
 	border-bottom: 1px solid black;
 }
 
+.item{
+	display: flex;
+	flex-direction: column;
+	*{
+		margin: 0;
+	}
+	header{
+		font-size: 20px;
+		font-weight: bold;
+	}
+	header::before{
+		content: '○ ';
+	}
+	span{
+		font-size: 14px;
+		color: #444;
+	}
+	p{
+		padding-top: 10px;
+		font-size: 16px;
+	}
+	span, p {
+		margin-left: 5px;
+		border-left: 2px solid black;
+		padding-left: 20px;
+	}
+}
 
 /* #################### MEDIA LAYOUT #################### */
 @media screen and (max-width: 1375px) {

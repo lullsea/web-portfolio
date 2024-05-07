@@ -94,11 +94,14 @@ function positionSvg(startPos, offsetX = 0, offsetY = 0) {
     lineright.style.strokeDasharray = lineright.style.strokeDashoffset = isWide ? `${pos2.height}px` : `${pos2.x + pos2.width - posX}px`;
 }
 function animate() {
-    document.getElementById("loading").style.height = "200px";
+    const loading = document.getElementById("loading");
+    loading.style.height = "200px";
+    loading.style.border = "1px solid black";
     setTimeout(() => {
         // Line1 go down
+        loading.style.height = 0;
+    loading.style.border = "none";
         line1.style.transition = isWide ? '.2s' : '.6s';
-        document.getElementById("loading").style.height = 0;
         line1.style.strokeDashoffset = 0
         setTimeout(() => {
             // Line2 go right or nothing depending on window width
@@ -125,7 +128,7 @@ function animate() {
                     setTimeout(() => {
                         // Finish animation
                         line1.style.transition = line2.style.transition = lineleft.style.transition = lineright.style.transition = 'none'
-                        rect1.style.transition = rect2.style.transition = 'stroke-dashoffset .1s';
+                        rect1.style.transition = rect2.style.transition = 'stroke-dashoffset .3s';
                         toggleChecks(false);
                     }, 350)
                 }, 200)
@@ -183,6 +186,7 @@ checkboxes.forEach(x => x.addEventListener("change", () => {
         toggleChecks(true);
     }
     toggleStyles();
+    console.log(activeLang);
 }))
 
 let b = false;
