@@ -1,6 +1,12 @@
 :root{
 	--background: #f9f9f9;
-	--card-background: #C2C0C5;
+	--card-background: #D2D0D6;
+	--color-1: lightblue;
+	--color-2: orange;
+	--color-3: coral;
+	--color-4: lime;
+	--color-5: violet;
+
 }
 /* #################### MAIN #################### */
 * {
@@ -63,7 +69,6 @@ html body {
 
 
 #main-content {
-	padding-top: 20px;
 	transition: 0.5s;
 	height: 100%;
 	display: flex;
@@ -73,7 +78,7 @@ html body {
 
 section {
 	min-height: 90%;
-	height: 940px;
+	height: 900px;
 	margin: auto;
 }
 
@@ -258,19 +263,19 @@ section.content>.col-1 {
 .folder:hover, .folder.active{
 	z-index: 100;
 	.fa-react{
-		color: lightblue;
+		color: var(--color-1);
 	}
 	.fa-java{
-		color: orange;
+		color: var(--color-2);
 	}
 	.fa-html5{
-		color: coral;
+		color: var(--color-3);
 	}
 	.fa-python{
-		color: lime;
+		color: var(--color-4);
 	}
 	.fa-stumbleupon{
-		color: violet;
+		color: var(--color-5);
 	}
 	.lang-text{
 		background: #999;
@@ -290,7 +295,13 @@ section.content>.col-2 {
 	z-index: 50;
 }
 
-.experience{
+#projects {
+	display: none;
+	opacity: 0;
+}
+
+.col-2 > div{
+	transition: .2s;
 	margin: 20px;
 }
 .col-2>.tab {
@@ -306,9 +317,10 @@ section.content>.col-2 {
 	*{
 		margin: 0;
 	}
-	header{
+	strong{
 		font-size: 20px;
-		font-weight: bold;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
 	}
 	header::before{
 		content: '○ ';
@@ -318,7 +330,7 @@ section.content>.col-2 {
 		color: #444;
 	}
 	p{
-		padding-top: 10px;
+		padding: 7px 0 10px 0;
 		font-size: 16px;
 	}
 	span, p {

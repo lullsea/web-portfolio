@@ -757,7 +757,7 @@ var Marker = function(lat, lon, text, altitude, previous, scene, _opts){
         markerColor: "#FFCC00",
         labelColor: "#FFF",
         font: "Inconsolata",
-        fontSize: 20,
+        fontSize: 14,
         drawTime: 2000,
         lineSegments: 150
     }

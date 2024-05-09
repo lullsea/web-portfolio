@@ -1,5 +1,7 @@
 const checkboxes = document.querySelectorAll('.folder > input[type="checkbox"]');
 const svgContainer = document.getElementById("svg-anims");
+const experienceEl = document.getElementById("experience");
+const projectsEl = document.getElementById("projects");
 
 // Svg elements
 const line1 = svgContainer.querySelector("#linedown1");
@@ -21,6 +23,17 @@ let isLangChanged = false;
 
 const disableAllCheckboxes = (y) => checkboxes.forEach(x => { if (x != y) x.checked = false });
 const toggleChecks = (b) => checkboxes.forEach(x => b ? x.setAttribute("disabled", true) : x.removeAttribute("disabled"));
+
+const toggleExperience = (b) => {
+    setTimeout(() => experienceEl.style.display = b ? 'inline-block' : 'none', 200);
+    experienceEl.style.marginTop = b ? '20px' : '100px';
+    experienceEl.style.opacity = b ? 1 : 0;
+}
+
+const toggleProjects = (b) => {
+    projectsEl.style.display = b ? 'inline-block' : 'none';
+    setTimeout(() => projectsEl.style.opacity = b ? 1 : 0, 100);
+}
 
 
 disableAllCheckboxes(null);
@@ -66,25 +79,24 @@ function positionSvg(startPos, offsetX = 0, offsetY = 0) {
         "x": window.scrollX + pos2.left,
         "y": window.scrollY + pos2.y,
         "width": pos2.width,
-        "height": pos2.height,
+        "height": pos2.height + 1,
     })
 
     setAttributes(rect2, {
         "x": window.scrollX + pos2.left,
         "y": window.scrollY + pos2.y,
         "width": pos2.width,
-        "height": pos2.height,
+        "height": pos2.height + 1,
     })
 
     // rect2.setAttribute("x", pos2.x);
 
-    const col2Dimension = (pos2.height * 2) + (pos2.width * 2)
+    const col2Dimension = (pos2.height * 2) + (pos2.width * 2) + 2;
     //TODO
 
     rect1.style.strokeDasharray = col2Dimension;
     rect2.style.strokeDasharray = col2Dimension;
 
-    if (isLangChanged == true) disableSvgRects();
 
     line1.style.strokeDasharray = line1.style.strokeDashoffset = `${posY2 - posY}px`;
     line2.style.strokeDasharray = line2.style.strokeDashoffset = `${posX2 - posX}px`;
@@ -93,14 +105,34 @@ function positionSvg(startPos, offsetX = 0, offsetY = 0) {
     lineleft.style.strokeDasharray = lineleft.style.strokeDashoffset = isWide ? `${posY2 - pos2.y}px` : `${posX - pos2.x}`;
     lineright.style.strokeDasharray = lineright.style.strokeDashoffset = isWide ? `${pos2.height}px` : `${pos2.x + pos2.width - posX}px`;
 }
+
+function changeProjects() {
+    if (isLangChanged == true) {
+        console.log(activeLang);
+        if(activeLang == null){
+            toggleExperience(true);
+            toggleProjects(false);
+        }else{
+            toggleExperience(false);
+            setTimeout(() => {
+                toggleProjects(false);
+                setTimeout(() => toggleProjects(true), 400);
+            }, 500)
+        }
+        isLangChanged = false;
+        disableSvgRects()
+    };
+}
+
 function animate() {
     const loading = document.getElementById("loading");
     loading.style.height = "200px";
     loading.style.border = "1px solid black";
+
     setTimeout(() => {
         // Line1 go down
         loading.style.height = 0;
-    loading.style.border = "none";
+        loading.style.border = "none";
         line1.style.transition = isWide ? '.2s' : '.6s';
         line1.style.strokeDashoffset = 0
         setTimeout(() => {
@@ -117,13 +149,11 @@ function animate() {
                 lineleft.style.transition = '.2s';
                 lineright.style.strokeDashoffset = 0;
                 lineright.style.transition = '.2s';
-
                 rect2.style.transition = '1s';
                 rect2.style.strokeDashoffset = -100;
+
                 setTimeout(() => {
                     rect1.style.transition = '.7s';
-                    rect1.style.strokeWidth = 5;
-                    rect2.style.strokeWidth = 5;
                     rect1.style.strokeDashoffset = 0;
                     setTimeout(() => {
                         // Finish animation
@@ -157,15 +187,15 @@ function toggleStyles() {
             animate();
         } else {
             if (activeLang == name) {
-                activeLang = null;
                 isLangChanged = true;
+                activeLang = null;
                 disableSvgRects();
             }
             icon.style.opacity = 1;
             folder.classList.replace("fa-folder-open", "fa-folder-closed");
             parent.classList.remove("active");
         }
-        isLangChanged = false;
+        changeProjects();
     }
     )
 }
@@ -186,7 +216,6 @@ checkboxes.forEach(x => x.addEventListener("change", () => {
         toggleChecks(true);
     }
     toggleStyles();
-    console.log(activeLang);
 }))
 
 let b = false;
