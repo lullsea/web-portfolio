@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Inconsolota;
+  src: url(../fonts/Inconsolota.ttf);
+}
+
 :root{
 	--background: #f9f9f9;
 	--card-background: #D2D0D6;
@@ -10,9 +15,11 @@
 }
 /* #################### MAIN #################### */
 * {
-	font-family: 'Inconsolata', monospace;
+	font-family: Inconsolota;
+	font-weight: 800;
 	padding: 0;
 }
+
 
 html {
 	height: 100%;
@@ -44,10 +51,10 @@ html body {
 	display: inline-block;
 	position: relative;
 	transition: transform .1s ease-out, opacity .2s ease-in;
-	transform: translateY(90px);
+	transform: translateY(100px);
 	width: 40px;
 	opacity: 0;
-	font-family: monospace;
+	font-family: monospace !important;
 	font-size: 32px;
 	margin-left: 5px;
 }
@@ -77,8 +84,8 @@ html body {
 }
 
 section {
-	min-height: 90%;
 	height: 900px;
+	min-height: 90%;
 	margin: auto;
 }
 
@@ -295,10 +302,6 @@ section.content>.col-2 {
 	z-index: 50;
 }
 
-#projects {
-	display: none;
-	opacity: 0;
-}
 
 .col-2 > div{
 	transition: .2s;
@@ -309,6 +312,45 @@ section.content>.col-2 {
 	width: 80%;
 	height: 100px;
 	border-bottom: 1px solid black;
+}
+
+#projects {
+	display: none;
+	opacity: 0;
+	width: 90%;
+	.proj{
+		display: block;
+		margin: auto;
+
+		border: 1px solid black;
+		background: aliceblue;
+		margin-bottom: 20px;
+		max-width: 540px;
+	}
+	header{
+		padding: 2.5px;
+	}
+	p{
+		max-height: 100px;
+		overflow-y: scroll;
+	}
+	header, p{
+		padding-left: 5px;
+	}
+	.proj-img{
+		border-bottom: 2px solid black;
+		border-top: 2px solid black;
+		padding-top: 10px;
+		padding-bottom: 15px;
+		background: gray;
+		img{
+			display: block;
+			margin: auto;
+			border:2px solid black;
+			height: 175px;
+			width: 175px;
+		}
+	}
 }
 
 .item{
@@ -374,5 +416,8 @@ section.content>.col-2 {
 	} */
 	#globe > canvas{
 		transform: translateX(-50%);
+	}
+	#projects{
+		width: 100%;
 	}
 }

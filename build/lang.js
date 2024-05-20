@@ -32,7 +32,25 @@ const toggleExperience = (b) => {
 
 const toggleProjects = (b) => {
     projectsEl.style.display = b ? 'inline-block' : 'none';
+    if(b) generateProj(activeLang);
     setTimeout(() => projectsEl.style.opacity = b ? 1 : 0, 100);
+}
+
+const generateProj = (proj) => {
+    const p = PROJECT[proj];
+    projectsEl.innerHTML = "";
+    p.forEach(item => {
+        projectsEl.innerHTML += `
+        
+        <div class="proj">
+            <header>${item.header}</header>
+            <div class="proj-img"><img src="${item.image}" alt=""></div>
+            <p>
+            ${item.description}
+            </p>
+        </div>
+        `
+    })
 }
 
 
