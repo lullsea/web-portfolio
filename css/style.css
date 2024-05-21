@@ -85,7 +85,6 @@ html body {
 
 section {
 	height: 900px;
-	min-height: 90%;
 	margin: auto;
 }
 
@@ -329,6 +328,7 @@ section.content>.col-2 {
 	}
 	header{
 		padding: 2.5px;
+		text-transform: capitalize;
 	}
 	p{
 		max-height: 100px;
@@ -342,7 +342,7 @@ section.content>.col-2 {
 		border-top: 2px solid black;
 		padding-top: 10px;
 		padding-bottom: 15px;
-		background: gray;
+		background: lightgray;
 		img{
 			display: block;
 			margin: auto;
