@@ -343,12 +343,15 @@ section.content>.col-2 {
 		padding-top: 10px;
 		padding-bottom: 15px;
 		background: lightgray;
-		img{
+		a, img{
 			display: block;
 			margin: auto;
 			border:2px solid black;
 			height: 175px;
 			width: 175px;
+		}
+		a{
+			border: none;
 		}
 	}
 }
