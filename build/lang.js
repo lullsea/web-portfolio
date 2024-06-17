@@ -45,7 +45,7 @@ const generateProj = (proj) => {
         <div class="proj">
             <header>${item.header}</header>
             <div class="proj-img">
-                <a href="${item.link}">
+                <a ${item.link != '' ? 'href="' + item.link + '"' : null}>
                     <img src="${item.image}" alt="">
                 </a>
             </div>

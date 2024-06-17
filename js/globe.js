@@ -25,7 +25,7 @@ globe = new Globe(globeWidth * 2, globeHeight, {
 });
 
 let c = globe.domElement;
-let FILTER = "filter: invert(1) contrast(0.96);" 
+let FILTER = "filter: invert(1) contrast(0.765);" 
 c.style = FILTER;
 
 $('#globe').append(c);

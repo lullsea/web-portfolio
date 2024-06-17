@@ -45,7 +45,7 @@ window.addEventListener("focus", () => {
             x.style.background = "black";
             x.style.margin = "0 0 0 50px";
             x.style.width = "0px"}), 1000);
-            setTimeout(() => icons.forEach((x, i) => x.outerHTML = lullsea[i] + "&nbsp;"), 450)
+            setTimeout(() => icons.forEach((x, i) => x.outerHTML = '<strong>' + lullsea[i] + '</strong>' + "&nbsp;"), 450)
     }, 140 * characters.length);
     
     // Intro finish

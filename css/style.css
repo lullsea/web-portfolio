@@ -4,8 +4,8 @@
 }
 
 :root{
-	--background: #f9f9f9;
-	--card-background: #D2D0D6;
+	--background: #e1e1e1;
+	--card-background: #bfc3ca;
 	--color-1: lightblue;
 	--color-2: orange;
 	--color-3: coral;
@@ -16,7 +16,7 @@
 /* #################### MAIN #################### */
 * {
 	font-family: Inconsolota;
-	font-weight: 800;
+	font-weight: 700;
 	padding: 0;
 }
 
@@ -62,6 +62,10 @@ html body {
 	transform: scale(1.5);
 	font-size: 24px;
 	margin-right: 13px;
+}
+#intro > span > strong{
+	transform: translateY(10px);
+	display:block;
 }
 #intro > span > .cover{
 	width: 0px;
@@ -331,6 +335,7 @@ section.content>.col-2 {
 		text-transform: capitalize;
 	}
 	p{
+		font-size: 15px;
 		max-height: 100px;
 		overflow-y: scroll;
 	}
@@ -352,6 +357,13 @@ section.content>.col-2 {
 		}
 		a{
 			border: none;
+			transition: .2s;
+		}
+		a:hover{
+			filter: brightness(0.8);
+			i{
+				opacity: 1;
+			}
 		}
 	}
 }
@@ -370,6 +382,9 @@ section.content>.col-2 {
 	header::before{
 		content: '○ ';
 	}
+	span:first-of-type{
+		padding-top: 5px;
+	}
 	span{
 		font-size: 14px;
 		color: #444;
@@ -379,7 +394,7 @@ section.content>.col-2 {
 		font-size: 16px;
 	}
 	span, p {
-		margin-left: 5px;
+		margin-left: 3px;
 		border-left: 2px solid black;
 		padding-left: 20px;
 	}
