@@ -47,10 +47,10 @@ const PROJECT = {
     image: "img/face-tracker.jpg",
     },
     {
-    header: "LEET Code",
-    description: "Python was a good language for LEET since its simple and allowed me to focus on the problem instead of thinking about the code.",
+    header: "statistical graphing",
+    description: "Used graphing libraries like matplotlib and plotly for my college statistical assignments.",
     link: "",
-    image: "img/leet.png",
+    image: "img/matplotlib.png",
     },
   ],
   "java": [
@@ -75,22 +75,10 @@ const PROJECT = {
   ],
   "others": [
     {
-    header: "",
-    description: "",
+    header: "LEET Code",
+    description: "To get better at data structures and algorithms I practiced with LEET code.",
     link: "",
-    image: "",
-    },
-    {
-    header: "",
-    description: "",
-    link: "",
-    image: "",
-    },
-    {
-    header: "",
-    description: "",
-    link: "",
-    image: "",
+    image: "img/leet.png",
     },
   ],
 }

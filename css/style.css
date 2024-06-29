@@ -6,11 +6,11 @@
 :root{
 	--background: #e1e1e1;
 	--card-background: #bfc3ca;
-	--color-1: lightblue;
-	--color-2: orange;
-	--color-3: coral;
-	--color-4: lime;
-	--color-5: violet;
+	--color-1: #25304f;
+	--color-2: #3a3013;
+	--color-3: #2f1d12;
+	--color-4: #33432f;
+	--color-5: #3a273e;
 
 }
 /* #################### MAIN #################### */
@@ -270,22 +270,39 @@ section.content>.col-1 {
 		stroke-width: 3px;
 	}
 }
+
+.folder:has(.fa-react){
+	color: var(--color-1);
+}
+.folder:has(.fa-java){
+	color: var(--color-2);
+}
+.folder:has(.fa-html5){
+	color: var(--color-3);
+}
+.folder:has(.fa-python){
+	color: var(--color-4);
+}
+.folder:has(.fa-stumbleupon){
+	color: var(--color-5);
+}
+
 .folder:hover, .folder.active{
 	z-index: 100;
 	.fa-react{
-		color: var(--color-1);
+		color: lightblue;
 	}
 	.fa-java{
-		color: var(--color-2);
+		color: orange;
 	}
 	.fa-html5{
-		color: var(--color-3);
+		color: lightcoral;
 	}
 	.fa-python{
-		color: var(--color-4);
+		color: lightgreen;
 	}
 	.fa-stumbleupon{
-		color: var(--color-5);
+		color: violet;
 	}
 	.lang-text{
 		background: #999;
@@ -325,8 +342,8 @@ section.content>.col-2 {
 		display: block;
 		margin: auto;
 
-		border: 1px solid black;
-		background: aliceblue;
+		border: 2px solid black;
+		background: #aab5c1;
 		margin-bottom: 20px;
 		max-width: 540px;
 	}
@@ -347,11 +364,11 @@ section.content>.col-2 {
 		border-top: 2px solid black;
 		padding-top: 10px;
 		padding-bottom: 15px;
-		background: lightgray;
+		background: #273037;
 		a, img{
 			display: block;
 			margin: auto;
-			border:2px solid black;
+			/* border:2px solid black; */
 			height: 175px;
 			width: 175px;
 		}
@@ -379,6 +396,9 @@ section.content>.col-2 {
         text-decoration: underline;
         text-decoration-thickness: 2px;
 	}
+	header{
+		margin-bottom: 5px;
+	}
 	header::before{
 		content: '○ ';
 	}
@@ -390,7 +410,7 @@ section.content>.col-2 {
 		color: #444;
 	}
 	p{
-		padding: 7px 0 10px 0;
+		padding: 7px 0 20px 0;
 		font-size: 16px;
 	}
 	span, p {

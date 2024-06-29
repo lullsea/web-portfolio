@@ -15,7 +15,7 @@ function update(timer){
 }
 
 // TODO: alot of optimization to be done here
-window.addEventListener("focus", () => {
+window.addEventListener("load", () => {
     // Swoosh up
     for(let i = 0; i < totalSteps; i++){
         setTimeout(() => {
