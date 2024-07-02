@@ -12,7 +12,7 @@ globe = new Globe(globeWidth * 2, globeHeight, {
     data: [],
     tiles: grid.tiles,
     baseColor: "#000",
-    markerColor: "#0e44ad",
+    markerColor: "#62c3bb",
     pinColor: "#aacfd1",
 
     satelliteColor: "#aacfd1",
