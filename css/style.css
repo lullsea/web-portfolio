@@ -44,6 +44,7 @@ html body {
     left: 0;
     z-index: 100;
     transition: opacity 0.5s;
+    text-wrap: nowrap;
 }
 #intro > span {
     display: inline-block;
@@ -56,7 +57,7 @@ html body {
     opacity: 0;
     font-family: monospace !important;
     font-size: 32px;
-    margin-left: 5px;
+    /* margin-left: 5px; */
 }
 #intro > span > i {
     transform: scale(1.5);
@@ -98,7 +99,7 @@ section {
     position: fixed;
     z-index: 999;
     width: 25vw;
-    min-width: 400px;
+    min-width: 300px;
     height: 0;
     transition: 0.1s;
     background: lightgray;
@@ -122,7 +123,8 @@ section {
 /* #################### PROFILE #################### */
 
 section.profile {
-    width: 430px;
+    width: 40vw;
+    max-width: 430px;
     font-size: 16px;
     display: inline;
     background: var(--card-background);
@@ -164,7 +166,7 @@ section.profile > * {
     border-bottom: 1px solid black;
     padding-bottom: 15px;
     width: 80%;
-    min-width: 350px;
+    /* min-width: 350px; */
 }
 
 /* #################### GLOBE #################### */
@@ -338,14 +340,14 @@ section.content > .col-2 {
 #projects {
     display: none;
     opacity: 0;
-    width: 90%;
+    /* width: 90%; */
     .proj {
         display: block;
-        margin: auto;
-
+        /* margin: auto; */
         border: 2px solid black;
         background: #aab5c1;
         margin-bottom: 20px;
+        width: 85%;
         max-width: 540px;
     }
     header {
@@ -356,6 +358,7 @@ section.content > .col-2 {
         font-size: 15px;
         max-height: 100px;
         overflow-y: scroll;
+        padding: 0 5px 0 5px;
     }
     header,
     p {
@@ -432,18 +435,25 @@ section.content > .col-2 {
 
     section.profile,
     section.content {
-        width: 80vw;
-        min-width: 400px !important;
+        width: 90vw;
+        min-width: 300px !important;
         margin: auto;
         margin-top: 20px;
     }
 
-    .profile {
-        max-width: 550px;
-    }
+    /* section.profile { */
+    /*     max-width: 550px; */
+    /* } */
     section.content > div {
         min-width: 175px;
         width: 100% !important;
+    }
+    .profile > .socials {
+        gap: 10px !important;
+    }
+
+    .folder {
+        margin: 50px 5px 0 0;
     }
 
     .col-1 > * {
@@ -461,5 +471,11 @@ section.content > .col-2 {
     }
     #projects {
         width: 100%;
+    }
+    #intro{
+        padding-left: 5px;
+    }
+    #intro > span {
+        font-size: 24px;
     }
 }
