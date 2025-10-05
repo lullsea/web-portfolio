@@ -4,13 +4,13 @@ const PROJECT = {
             header: "Elite Asia",
             description: "Used NextJS to maintain and develop new content and features in a cms platform.",
             link: "https://www.eliteasia.co/",
-            image: ''
+            image: 'img/elite-asia.jpg'
         },
         {
             header: "DES Team Digital Marketing",
             description: "Used NextJS to create multiple websites that are easily templated and reused for different clients.",
-            link: "https://www.eliteasia.co/",
-            image: ''
+            link: "",
+            image: 'img/DES.png'
         },
         {
             header: "edutechvo",
@@ -39,8 +39,8 @@ const PROJECT = {
             header: "myFirst Tech BackOffice",
             description:
                 "Maintain laravel code for the backoffice of the company.",
-            link: "https://www.github.com/lullsea/web-portfolio",
-            image: "img/koi.png",
+            link: "https://my.myfirst.tech",
+            image: "img/myFirst.jpg",
         },
     ],
     html: [
@@ -111,14 +111,14 @@ const PROJECT = {
             description:
                 "Implemented unit testing with cypress as a project manager at Elite Asia.",
             link: "",
-            image: "img/leet.png",
+            image: "img/cypress.png",
         },
         {
             header: "Unit Testing (Jest)",
             description:
                 "Implemented unit testing with Jest for frontend and backend testing at myFirst Tech.",
             link: "",
-            image: "img/leet.png",
+            image: "img/jest.png",
         },
         {
             header: "LEET Code",
