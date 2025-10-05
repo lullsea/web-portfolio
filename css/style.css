@@ -340,7 +340,6 @@ section.content > .col-2 {
 #projects {
     display: none;
     opacity: 0;
-    width: 90%;
     .proj {
         display: block;
         /* margin: auto; */
@@ -348,7 +347,6 @@ section.content > .col-2 {
         background: #aab5c1;
         margin-bottom: 20px;
         width: 100%;
-        max-width: 540px;
     }
     header {
         padding: 2.5px;
@@ -471,8 +469,5 @@ section.content > .col-2 {
     }
     #intro > span {
         font-size: 24px;
-    }
-    #projects > .proj{
-        width: 95%;
     }
 }
