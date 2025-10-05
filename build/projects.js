@@ -111,7 +111,7 @@ const PROJECT = {
             description:
                 "Implemented unit testing with cypress as a project manager at Elite Asia.",
             link: "",
-            image: "img/cypress.png",
+            image: "img/cypress.jpg",
         },
         {
             header: "Unit Testing (Jest)",
