@@ -340,14 +340,14 @@ section.content > .col-2 {
 #projects {
     display: none;
     opacity: 0;
-    /* width: 90%; */
+    width: 90%;
     .proj {
         display: block;
         /* margin: auto; */
         border: 2px solid black;
         background: #aab5c1;
         margin-bottom: 20px;
-        width: 85%;
+        width: 100%;
         max-width: 540px;
     }
     header {
@@ -463,19 +463,16 @@ section.content > .col-2 {
         width: 100% !important;
         margin: 0 !important;
     }
-    /* #globe {
-		margin-top: 70px !important;
-	} */
     #globe > canvas {
         transform: translateX(-50%);
-    }
-    #projects {
-        width: 100%;
     }
     #intro{
         padding-left: 5px;
     }
     #intro > span {
         font-size: 24px;
+    }
+    #projects > .proj{
+        width: 95%;
     }
 }
