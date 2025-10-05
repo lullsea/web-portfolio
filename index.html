@@ -1,201 +1,337 @@
-<!DOCTYPE html>
+<!doctype htmlq>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta
+            name="description"
+            content="(LULLSEA) I'm a developer based in Southeast Asia who uses React, NodeJS, Python, Java and more."
+        />
+        <title>Lullsea</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <script
+            src="https://kit.fontawesome.com/3df08dae2e.js"
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="./globe-grid.js"></script>
+        <script src="./build/projects.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="description"
-        content="(LULLSEA) I'm a developer based in Southeast Asia who uses React, NodeJS, Python, Java and more." />
-    <title>Lullsea</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="https://kit.fontawesome.com/3df08dae2e.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="./globe-grid.js"></script>
-    <script src="./build/projects.js"></script>
-</head>
-
-<body>
-    <div id="intro">
-        <span><i class="fa-solid fa-display"></i>&nbsp;</span>
-        <span><i class="fa-solid fa-umbrella"></i>&nbsp;</span>
-        <span><i class="fa-solid fa-feather"></i>&nbsp;</span>
-        <span><i class="fa-solid fa-gear"></i>&nbsp;</span>
-        <span><i class="fa-solid fa-flask"></i>&nbsp;</span>
-        <span><i class="fa-solid fa-fish"></i>&nbsp;</span>
-        <span><i class="fa-solid fa-trophy"></i>&nbsp;</span>
-    </div>
-    <div id="main-content">
-        <section class="profile">
-            <div id="profile-picture"
-                style="background: black; height: 250px; width: 250px !important;  border-radius: 360px; overflow: hidden;">
-                <img src="img/koi.png" style="width: inherit; height: inherit" />
-            </div>
-            <div class="socials">
-                <a target=”_blank” href="https://buymeacoffee.com/lullsea">
-                    <i class="fa-brands fa-patreon"></i>
-                </a>
-                <a target=”_blank” href="https://www.github.com/lullsea">
-                    <i class="fa-brands fa-github"></i>
-                </a>
-                <a target=”_blank” href="https://www.linkedin.com/in/ivan-lo-b506962a6">
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
-                <a target=”_blank” href="https://x.com/lullatsea">
-                    <i class="fa-brands fa-twitter"></i>
-                </a>
-                <a target=”_blank” href="mailto:ivanirl3831@gmail.com">
-                    <i class="fa-solid fa-envelope"></i>
-                </a>
-            </div>
-            <div class="box about">
-                <strong style="color: #223A90;">LULLSEA</strong>: I'm a developer based in <strong style="color: #c36762">Southeast Asia</strong>
-                who has been programming since the age of 12.
-                Passionate about creating innovative solutions and bringing ideas to life through code, I thrive on the
-                challenges and creativity that programming presents.
-            </div>
-            <div class="box age">
-                <strong style="text-decoration: underline;">Age (years)</strong><br />
-                <span id="age" style="font-size: 22px;"></span>
-            </div>
-            <div class="box" style="border: none;">
-                <strong style="text-decoration: underline;">Skills</strong><br />
-                <div style="display: flex; gap: 50px;">
-                    <ul style="
-                    list-style: inside;
-                    list-style-type: '- ';
-                    ">
-                        <li>AWS</li>
-                        <li>Databases</li>
-                        <li>OS</li>
-                        <li>API dev</li>
-                        <li>UI/UX design</li>
-                        <li>Tensorflow</li>
-                    </ul>
-                    <ul style="
-                    list-style: inside;
-                    list-style-type: '- ';
-                    ">
-                        <li>Git workflow</li>
-                        <li>Docker</li>
-                        <li>Algorithms</li>
-                        <li>Collaboration</li>
-                    </ul>
+    <body>
+        <div id="intro">
+            <span><i class="fa-solid fa-display"></i>&nbsp;</span>
+            <span><i class="fa-solid fa-umbrella"></i>&nbsp;</span>
+            <span><i class="fa-solid fa-feather"></i>&nbsp;</span>
+            <span><i class="fa-solid fa-gear"></i>&nbsp;</span>
+            <span><i class="fa-solid fa-flask"></i>&nbsp;</span>
+            <span><i class="fa-solid fa-fish"></i>&nbsp;</span>
+            <span><i class="fa-solid fa-trophy"></i>&nbsp;</span>
+        </div>
+        <div id="main-content">
+            <section class="profile">
+                <div
+                    id="profile-picture"
+                    style="
+                        background: black;
+                        height: 250px;
+                        width: 250px !important;
+                        border-radius: 360px;
+                        overflow: hidden;
+                    "
+                >
+                    <img
+                        src="img/koi.png"
+                        style="width: inherit; height: inherit"
+                    />
                 </div>
-            </div>
-        </section>
-        <section class="content">
-            <div class="col-1">
-                <div class="languages">
-                    <div><strong>Some tools that I've used</strong></div>
-                    <hr>
-                    <div class="folder">
-                        <input type="checkbox" name="react" id="react-check">
-                        <i class="lang-ico fa-brands fa-react"></i>
-                        <i class="folder-ico fa-solid fa-folder-closed"></i>
-                        <span class="lang-text">React
-                            <span class="underline"></span>
-                        </span>
-                    </div>
-                    <div class="folder">
-                        <input type="checkbox" name="html" id="html-check">
-                        <i class="lang-ico fa-brands fa-html5"></i>
-                        <i class="folder-ico fa-solid fa-folder-closed"></i>
-                        <span class="lang-text">HTML/CSS
-                            <span class="underline"></span>
-                        </span>
-                    </div>
-                    <div class="folder">
-                        <input type="checkbox" name="java" id="java-check">
-                        <i class="lang-ico fa-brands fa-java"></i>
-                        <i class="folder-ico fa-solid fa-folder-closed"></i>
-                        <span class="lang-text">Java
-                            <span class="underline"></span>
-                        </span>
-                    </div>
-                    <div class="folder">
-                        <input type="checkbox" name="python" id="python-check">
-                        <i class="lang-ico fa-brands fa-python"></i>
-                        <i class="folder-ico fa-solid fa-folder-closed"></i>
-                        <span class="lang-text">Python
-                            <span class="underline"></span>
-                        </span>
-                    </div>
-                    <div class="folder">
-                        <input type="checkbox" name="others" id="others-check">
-                        <i class="lang-ico fa-brands fa-stumbleupon"></i>
-                        <i class="folder-ico fa-solid fa-folder-closed"></i>
-                        <span class="lang-text">Others
-                            <span class="underline"></span>
-                        </span>
+                <div class="socials">
+                    <a
+                        target="”_blank”"
+                        href="https://buymeacoffee.com/lullsea"
+                    >
+                        <i class="fa-brands fa-patreon"></i>
+                    </a>
+                    <a target="”_blank”" href="https://www.github.com/lullsea">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a
+                        target="”_blank”"
+                        href="https://www.linkedin.com/in/ivan-lo-b506962a6"
+                    >
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a target="”_blank”" href="https://x.com/lullatsea">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a target="”_blank”" href="mailto:ivanirl3831@gmail.com">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+                <div class="box about">
+                    <strong style="color: #223a90">LULLSEA</strong>: I'm a
+                    developer based in
+                    <strong style="color: #c36762">Southeast Asia</strong>
+                    who has been programming since the age of 12. Passionate
+                    about creating innovative solutions and bringing ideas to
+                    life through code, I thrive on the challenges and creativity
+                    that programming presents.
+                </div>
+                <div class="box age">
+                    <strong style="text-decoration: underline"
+                        >Age (years)</strong
+                    ><br />
+                    <span id="age" style="font-size: 22px"></span>
+                </div>
+                <div class="box" style="border: none">
+                    <strong style="text-decoration: underline">Skills</strong
+                    ><br />
+                    <div style="display: flex; gap: 50px">
+                        <ul
+                            style="
+                                list-style: inside;
+                                list-style-type: &quot;- &quot;;
+                            "
+                        >
+                            <li>AWS</li>
+                            <li>Databases</li>
+                            <li>OS</li>
+                            <li>API dev</li>
+                            <li>UI/UX design</li>
+                            <li>Tensorflow</li>
+                        </ul>
+                        <ul
+                            style="
+                                list-style: inside;
+                                list-style-type: &quot;- &quot;;
+                            "
+                        >
+                            <li>Git workflow</li>
+                            <li>Docker</li>
+                            <li>Algorithms</li>
+                            <li>Collaboration</li>
+                        </ul>
                     </div>
                 </div>
-                <div id="globe"></div>
-            </div>
-            <div class="col-2">
-                <div id="experience">
-                    <header><strong>Experience</strong></header>
-                    <hr>
-                    <div class="item">
-                        <header><strong>Internship</strong></header>
-                        <span>Elegant Aspire | Kota Kinabalu, Malaysia</span>
-                        <span>2023 - 2024</span>
-                        <p>
-                            Helped conduct events as well as implemented an internal leave application for employees to file for leave applications online. 
-                        </p>
+            </section>
+            <section class="content">
+                <div class="col-1">
+                    <div class="languages">
+                        <div><strong>Some tools that I've used</strong></div>
+                        <hr />
+                        <div class="folder">
+                            <input
+                                type="checkbox"
+                                name="react"
+                                id="react-check"
+                            />
+                            <i class="lang-ico fa-brands fa-react"></i>
+                            <i class="folder-ico fa-solid fa-folder-closed"></i>
+                            <span class="lang-text"
+                                >React
+                                <span class="underline"></span>
+                            </span>
+                        </div>
+                        <div class="folder">
+                            <input
+                                type="checkbox"
+                                name="html"
+                                id="html-check"
+                            />
+                            <i class="lang-ico fa-brands fa-html5"></i>
+                            <i class="folder-ico fa-solid fa-folder-closed"></i>
+                            <span class="lang-text"
+                                >HTML/CSS
+                                <span class="underline"></span>
+                            </span>
+                        </div>
+                        <div class="folder">
+                            <input
+                                type="checkbox"
+                                name="java"
+                                id="java-check"
+                            />
+                            <i class="lang-ico fa-brands fa-java"></i>
+                            <i class="folder-ico fa-solid fa-folder-closed"></i>
+                            <span class="lang-text"
+                                >Java
+                                <span class="underline"></span>
+                            </span>
+                        </div>
+                        <div class="folder">
+                            <input
+                                type="checkbox"
+                                name="python"
+                                id="python-check"
+                            />
+                            <i class="lang-ico fa-brands fa-python"></i>
+                            <i class="folder-ico fa-solid fa-folder-closed"></i>
+                            <span class="lang-text"
+                                >Python
+                                <span class="underline"></span>
+                            </span>
+                        </div>
+                        <div class="folder">
+                            <input type="checkbox" name="php" id="php-check" />
+                            <i class="lang-ico fa-brands fa-php"></i>
+                            <i class="folder-ico fa-solid fa-folder-closed"></i>
+                            <span class="lang-text"
+                                >PHP
+                                <span class="underline"></span>
+                            </span>
+                        </div>
+                        <div class="folder">
+                            <input
+                                type="checkbox"
+                                name="others"
+                                id="others-check"
+                            />
+                            <i class="lang-ico fa-brands fa-stumbleupon"></i>
+                            <i class="folder-ico fa-solid fa-folder-closed"></i>
+                            <span class="lang-text"
+                                >Others
+                                <span class="underline"></span>
+                            </span>
+                        </div>
+                        <footer
+                            style="
+                                color: gray;
+                                width: fit-content;
+                                margin-left: auto;
+                                height: 0;
+                                overflow: visible;
+                            "
+                        >
+                            <span>Last Updated: 21-SEP-2025</span>
+                        </footer>
                     </div>
-                    <div class="item">
-                        <header><strong>Web Developer</strong></header>
-                        <span>Edutechvo | Selangor, Malaysia</span>
-                        <span>2021 - 2023</span>
-                        <p>
-                            Create a SaaS application that proposed a new solution to education centers.
-                            Design the user interface and user experience using known design patterns.
-                            Work with internal api's to extend the functionality of the application.
-                        </p>
-                    </div>
-                    <div  class="item"> 
-                        <header><strong>Freelance Developer</strong></header>
-                        <span></span>
-                        <span>2021 - 2023</span>
-                        <p>
-                            Create simple websites such as portfolios and blog posts for clients.
-                        </p>
-                    </div>
-                    <div class="item">
-                        <header><strong>Waiter</strong></header>
-                        <span>Kota Kinabalu, Malaysia</span>
-                        <span>2020 - 2021</span>
-                        <p>
-                            Take orders from patrons and serve food and beverages.
-                            Perform consistent check-ins with patrons to ensure satisfaction and address complaints swiftly.
-                            Answer questions about the menu and make recommendations when appropriate or requested.
-                        </p>
-                    </div>
+                    <div id="globe"></div>
                 </div>
-                <div id="projects">
+                <div class="col-2">
+                    <div id="experience">
+                        <header><strong>Experience</strong></header>
+                        <hr />
+                        <div class="item">
+                            <header>
+                                <strong>Frontend Developer</strong>
+                            </header>
+                            <span>Elite Asia Sdn Bhd | Singapore</span>
+                            <span>2025</span>
+                            <p>
+                                Maintain and develop new features for multiple
+                                websites and subsites, handle deployments, lead
+                                a project with the goal of implementing
+                                unit-testing with Cypress. Help develop a CMS
+                                and a Backoffice system that aligns with the
+                                clients requirements. Optimize deployments with
+                                performant code which helped lessen load times
+                                and bundle sizes.
+                            </p>
+                        </div>
+                        <div class="item">
+                            <header>
+                                <strong>Fullstack Developer</strong>
+                            </header>
+                            <span
+                                >myFirst Tech Sdn Bhd | Johor Bahru, Johor,
+                                Malaysia</span
+                            >
+                            <span>2025</span>
+                            <p>
+                                Work on full stack development using Next.js,
+                                Golang, and PostgreSQL. Designed and implemented
+                                user-friendly interfaces, developed scalable
+                                back-end services, and collaborated with
+                                cross-functional teams.
+                            </p>
+                        </div>
+                        <div class="item">
+                            <header>
+                                <strong>Frontend Developer</strong>
+                            </header>
+                            <span
+                                >DES Team Digital Marketing | Kuala Lumpur,
+                                Selangor, Malaysia</span
+                            >
+                            <span>2024-2025</span>
+                            <p>
+                                Develop dynamic, responsive web applications
+                                using Next.js for frontend and collaborating
+                                with Laravel-based backend systems. Utilizing
+                                modern web frameworks, I work closely with
+                                cross-functional teams to ensure smooth user
+                                experiences.
+                            </p>
+                        </div>
+                        <div class="item">
+                            <header><strong>Internship</strong></header>
+                            <span
+                                >Elegant Aspire | Kota Kinabalu, Malaysia</span
+                            >
+                            <span>2023 - 2024</span>
+                            <p>
+                                Helped conduct events as well as implemented an
+                                internal leave application for employees to file
+                                for leave applications online.
+                            </p>
+                        </div>
+                        <div class="item">
+                            <header><strong>Web Developer</strong></header>
+                            <span>Edutechvo | Selangor, Malaysia</span>
+                            <span>2021 - 2023</span>
+                            <p>
+                                Create a SaaS application that proposed a new
+                                solution to education centers. Design the user
+                                interface and user experience using known design
+                                patterns. Work with internal api's to extend the
+                                functionality of the application.
+                            </p>
+                        </div>
+                        <div class="item">
+                            <header>
+                                <strong>Freelance Developer</strong>
+                            </header>
+                            <span></span>
+                            <span>2021 - 2023</span>
+                            <p>
+                                Create simple websites such as portfolios and
+                                blog posts for clients.
+                            </p>
+                        </div>
+                        <div class="item">
+                            <header><strong>Waiter</strong></header>
+                            <span>Kota Kinabalu, Malaysia</span>
+                            <span>2020 - 2021</span>
+                            <p>
+                                Take orders from patrons and serve food and
+                                beverages. Perform consistent check-ins with
+                                patrons to ensure satisfaction and address
+                                complaints swiftly. Answer questions about the
+                                menu and make recommendations when appropriate
+                                or requested.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="projects"></div>
                 </div>
-            </div>
-        </section>
-    </div>
-    <div id="loading">
-        <canvas id="bandwidth" style="filter: invert(1)"></canvas>
-        <footer>
-            <span id="loading-dots">
-
-            </span>
-        </footer>
-    </div>
-    <svg id="svg-anims">
-        <line id="linedown1" />
-        <line id="linedown2" />
-        <line id="lineleft" />
-        <line id="lineright" />
-        <rect id="col2-rect1" />
-        <rect id="col2-rect2" />
-    </svg>
-</body>
-
+            </section>
+        </div>
+        <div id="loading">
+            <canvas id="bandwidth" style="filter: invert(1)"></canvas>
+            <footer>
+                <span id="loading-dots"> </span>
+            </footer>
+        </div>
+        <svg id="svg-anims">
+            <line id="linedown1" />
+            <line id="linedown2" />
+            <line id="lineleft" />
+            <line id="lineright" />
+            <rect id="col2-rect1" />
+            <rect id="col2-rect2" />
+        </svg>
+    </body>
 </html>
 <script type="text/javascript" src="./build/intro.js"></script>
 <script type="text/javascript" src="./build/globe.js"></script>
